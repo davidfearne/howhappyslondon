@@ -1,4 +1,4 @@
-# howhappyslondon
+## howhappyslondon
 
 # Abstract
 How Happys London (2HL) was devised as a way for easily demonstrating the power of large-scale analytics. By looking at multiple freely available data sources and applying simplistic weighting algorithms it is possible to get a point in time consensus as to the happiness of London. This demonstration is designed to give the observer an idea of how to take the methods and theories employed in 2HL and apply them inside their own business. 
