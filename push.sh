@@ -9,10 +9,8 @@
 #
 ##############################################################
 
-cd /User/David/www
-
 read -p "Add Comment" com
 
 git add .
-git push origin master
 git commit -m "$com"
+git push origin master
