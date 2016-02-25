@@ -9,7 +9,7 @@
 #
 ##############################################################
 
-read -p "Add Comment" com
+read -p "Add Comment " com
 
 git add .
 git commit -m "$com"
