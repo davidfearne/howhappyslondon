@@ -2,7 +2,7 @@
 
 ##############################################################
 #
-# Installing Hadoop HDP 2.2 base requirements for node
+# Installing Hadoop HDP 2.7 base requirements for Ambari server 
 # Target OS Cent OS 6.5
 # Author: David Fearne
 # GitHub: https://github.com/davidfearne/howhappyslondon
@@ -27,6 +27,7 @@ HOSTNAME=$aa
 EOF
 
 cat <<EOF > /etc/sysconfig/network-scripts/ifcfg-eth0
+
 DEVICE=eth0
 BOOTPROTO=static
 IPADDR=$bb
@@ -63,18 +64,21 @@ echo "10.1.16.20	hadoopnode1.demonet.local
 echo "Restarting the Network Service, Please connect it using the new IP Address if you are using ssh ..."
 service network restart
 
-echo "installing Open Java 1.7.0"
+echo "installing Open Java 1.8.0"
 yum install -y java-1.7.0-openjdk-devel
 echo export JAVA_HOME=/usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java >> /etc/profile
 echo export PATH=$JAVA_HOME/bin:$PATH >> /etc/profile
-
-yum upgrade -y openssl
-yum install -y wget
 
 echo "Disable firewall"
 service iptables stop
 chkconfig iptables off
 
-reboot
+yum upgrade openssl
+yum install -y wget
 
+echo "Downloading HDP"
+yum install -y wget
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.2.0.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+yum install -y ambari-server
+ambari-server setup
 
