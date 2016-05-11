@@ -22,7 +22,7 @@ An API key is required to access the API. This is required to be presented as an
 apiKey:		jd1384y13ruc93480ry3498ry329t8y2
 ```
 Request size limiting was implemented via the key rate limiting and is currently set at 1440 requests per day or 1 per minute per API key.
-Query limiting is implemented using query request inspection in the API engine. This limits what could be a critical venerability meaning that users of the API could request years of results at any one time for multiple data sets putting strain on the data base servers lowering the response SLA to other users. At current we have limited the request sizes to 1 month of histographic data. This will return 44640 data points.
+Query limiting is implemented using query request inspection in the API engine. At current we have limited the request sizes to 1 month of histographic data. This will return 44640 data points.
 
 All API calls are GET requests
 
