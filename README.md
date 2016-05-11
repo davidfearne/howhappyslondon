@@ -31,13 +31,13 @@ All API calls are GET requests
 ### Happiness of London Now
 
 #### Request
-Example
+
 ```http
 curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2" 
 http://api.arrowdemo.center/v1/theface/now
 ```
 #### Response
-Example
+
 ```JSON
 {"value":"indifferent","index":"0.530952380952381”}
 ```
@@ -112,16 +112,18 @@ As part of the API set we have also exposed access to the individual indexs that
 The range of time is deterimed by time start `ts` and time end `te`. The time and data stamps are formatted as YYYY-MM-DD HH-MM-SS and URL encoded
 The item required is determined by the `i` parameter in the request string. Currently we support
 
--Wether Data courtesy of the MetOffice
-  *Current tempreature in London determined by the `i=tempreature`
-  *Chance of rainfall determined by the `i=precipitation`
-*Predicted type of wether `i=weathertype`
-Travel Data courtesy of Transport for London (TfL
-*tube
-*road
-*bus
--socail
+1. Wether Data courtesy of the MetOffice
+  1. Current tempreature in London determined by the `i=tempreature`
+  2. Chance of rainfall determined by the `i=precipitation`
+  3. Predicted type of wether `i=weathertype`
 
+2. Travel Data courtesy of Transport for London (TfL)
+  1. Underground tube line status determined by the `i=tube`  
+  2. Road congestion status determined by the `i=road`  
+  3. Bus line status determined by the `i=bus`  
+
+3. Socail data courtesy of Twitter
+  1. Socail semitent index of London determined by the `i=socail` 
 
 #### Request
 
@@ -129,9 +131,50 @@ Travel Data courtesy of Transport for London (TfL
 curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2"
 http://api.arrowdemo.center/v1/items/range?i=precipitation&ts=2016-2-23%2000%3A50%3A48&te=2016-2-23%2000%3A59%3A48
 ```
+#### Response 
 
-
-
+```JSON
+{
+	"item": [
+		{
+			"index": "0.97",
+			"datetime": "2016-02-23T00:53:11.000"
+		},
+		{
+			"index": "0.97",
+			"datetime": "2016-02-23T00:57:11.000"
+		},
+		{
+			"index": "0.97",
+			"datetime": "2016-02-23T00:52:11.000"
+		},
+		{
+			"index": "0.97",
+			"datetime": "2016-02-23T00:56:11.000"
+		},
+		{
+			"index": "0.97",
+			"datetime": "2016-02-23T00:59:11.000"
+		},
+		{
+			"index": "0.97",
+			"datetime": "2016-02-23T00:54:11.000"
+		},
+		{
+			"index": "0.97",
+			"datetime": "2016-02-23T00:58:11.000"
+		},
+		{
+			"index": "0.97",
+			"datetime": "2016-02-23T00:51:11.000"
+		},
+		{
+			"index": "0.97",
+			"datetime": "2016-02-23T00:55:11.000"
+		}
+	]
+}
+```
 
  
  
