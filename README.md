@@ -112,9 +112,17 @@ As part of the API set we have also exposed access to the individual indexs that
 The range of time is deterimed by time start `ts` and time end `te`. The time and data stamps are formatted as YYYY-MM-DD HH-MM-SS and URL encoded
 The item required is determined by the `i` parameter in the request string. Currently we support
 
--Tempreature
--
---
+-Wether Data courtesy of the MetOffice
+  *Current tempreature in London determined by the `i=tempreature`
+  *Chance of rainfall determined by the `i=precipitation`
+*Predicted type of wether `i=weathertype`
+Travel Data courtesy of Transport for London (TfL
+*tube
+*road
+*bus
+-socail
+
+
 #### Request
 
 ```HTTP
