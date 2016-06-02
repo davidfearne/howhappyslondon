@@ -113,7 +113,7 @@ The range of time is deterimed by time start `ts` and time end `te`. The time an
 The item required is determined by the `i` parameter in the request string. Currently we support
 
 1. Wether Data courtesy of the MetOffice
-  1. Current tempreature in London determined by the `i=tempreature`
+  1. Current tempreature in London determined by the `i=temperature`
   2. Chance of rainfall determined by the `i=precipitation`
   3. Predicted type of wether `i=weathertype`
 
@@ -123,7 +123,7 @@ The item required is determined by the `i` parameter in the request string. Curr
   3. Bus line status determined by the `i=bus`  
 
 3. Socail data courtesy of Twitter
-  1. Socail semitent index of London determined by the `i=socail` 
+  1. Socail semitent index of London determined by the `i=social` 
 
 #### Request
 
