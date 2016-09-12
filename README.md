@@ -177,4 +177,8 @@ http://api.arrowdemo.center/v1/items/range?i=precipitation&ts=2016-2-23%2000%3A5
 ```
 
  
+<<<<<<< HEAD
  
+=======
+ 
+>>>>>>> 708d91fa35c961244b0a758cb67ac51f8024dc1f
