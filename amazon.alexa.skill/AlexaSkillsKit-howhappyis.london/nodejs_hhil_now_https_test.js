@@ -16,7 +16,7 @@ exports.handler = (event, context) => {
         console.log(`LAUNCH REQUEST`)
         context.succeed(
           generateResponse(
-            buildSpeechletResponse("Welcome to the how happy is London Alexa skill, now ask me how happy London is now or over the last month", true),
+            buildSpeechletResponse("Welcome to the how happy is London Alexa skill, now ask me how happy London is now or last month", true),
             {}
           )
         )
@@ -28,13 +28,13 @@ exports.handler = (event, context) => {
 
         switch(event.request.intent.name) {
           case "getHappinessOfLondonNow":
-            var endpoint = "https://api.arrowdemo.center/v1/theface/now"
+            var endpoint = "https://api.random.org/json-rpc/1/invoke"
             var body = ""
             https.get(endpoint, (response) => {
               response.on('data', (chunk) => { body += chunk })
               response.on('end', () => {
                 var data = JSON.parse(body)
-                var currentHappiness = data.value
+                var currentHappiness = data.jsonrpc
                 context.succeed(
                   generateResponse(
                     buildSpeechletResponse(`Current happiness of London is ${currentHappiness}`, true),
@@ -47,13 +47,13 @@ exports.handler = (event, context) => {
             
              case "getHappinessOfLondonForSinceDate":
             console.log(event.request.intent.slots.SinceDate.value)
-            var endpoint = "https://api.abct.net/v1/theface/now"
+            var endpoint = "https://api.random.org/json-rpc/1/invoke"
             var body = ""
             https.get(endpoint, (response) => {
               response.on('data', (chunk) => { body += chunk })
               response.on('end', () => {
                 var data = JSON.parse(body)
-                var happinessOverTime = data.items[0].statistics.viewCount
+                var happinessOverTime = data.jsonrpc
                 context.succeed(
                   generateResponse(
                     buildSpeechletResponse(`Current view count is ${happinessOverTime}`, true),
