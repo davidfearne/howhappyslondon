@@ -1,1 +1,6 @@
-SayHi Say hi to the world
+getHappinessOfLondonNow now
+getHappinessOfLondonNow this second
+getHappinessOfLondonNow today
+
+getHappinessOfLondonForSinceDate for the last {SinceDate}
+getHappinessOfLondonForSinceDate over the last {SinceDate}

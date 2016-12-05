@@ -1,12 +1,13 @@
 /**
- * HTTP GET example
+ * Call happiness of London REST API
  * 
  * Additional Notes
+ * github.com/davidfearne/howhappyslondon
  * https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/getting-started-guide
  */
 
-// Route the incoming request based on type (LaunchRequest, IntentRequest,
-// etc.) The JSON body of the request is provided in the event parameter.
+// Route the incoming request based on type 
+// The JSON body of the request is provided in the event parameter.
 exports.handler = function (event, context) {
     try {
         console.log("event.session.application.applicationId=" + event.session.application.applicationId);
@@ -15,11 +16,11 @@ exports.handler = function (event, context) {
          * Uncomment this if statement and populate with your skill's application ID to
          * prevent someone else from configuring a skill that sends requests to this function.
          */
-        /*
+        
         if (event.session.application.applicationId !== "amzn1.echo-sdk-ams.app.[unique-value-here]") {
              context.fail("Invalid Application ID");
          }
-        */
+        
 
         if (event.session.new) {
             onSessionStarted({ requestId: event.request.requestId }, event.session);
@@ -101,12 +102,12 @@ function getWelcomeResponse(callback) {
     var sessionAttributes = {};
     var repromptText = null;
 
-    var cardTitle = "Http GET Example";
+    var cardTitle = "How Happy Is London?";
 
-    //test http get
+    //api.abct.net/theface/now http get
     testGet(function (response) {
 
-        var speechOutput = "Response status is " + response;
+        var speechOutput = "London is " + response;
         var shouldEndSession = true;
 
         callback(sessionAttributes,
@@ -122,7 +123,7 @@ function testGet(response) {
 
     var http = require('http');
     var options = {
-        host: 'www.bing.com',
+        host: 'api.abct.net/theface/now',
         port: 80,
         path: '/',
         agent: false

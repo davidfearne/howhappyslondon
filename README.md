@@ -34,7 +34,7 @@ All API calls are GET requests
 
 ```http
 curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2" 
-http://api.arrowdemo.center/v1/theface/now
+http://api.abct.net/v1/theface/now
 ```
 #### Response
 
@@ -47,7 +47,7 @@ The range of time is deterimed by time start `ts` and time end `te`. The time an
 
 Request
 ```HTTP
-curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2" http://api.arrowdemo.center/v1/theface/range?ts=2015-10-23%2000%3A50%3A48&te=2015-10-23%2000%3A59%3A48
+curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2" http://api.abct.net/v1/theface/range?ts=2015-10-23%2000%3A50%3A48&te=2015-10-23%2000%3A59%3A48
 
 ```
 Response 
@@ -129,7 +129,7 @@ The item required is determined by the `i` parameter in the request string. Curr
 
 ```HTTP
 curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2"
-http://api.arrowdemo.center/v1/items/range?i=precipitation&ts=2016-2-23%2000%3A50%3A48&te=2016-2-23%2000%3A59%3A48
+http://api.abct.net/v1/items/range?i=precipitation&ts=2016-2-23%2000%3A50%3A48&te=2016-2-23%2000%3A59%3A48
 ```
 #### Response 
 
@@ -174,11 +174,4 @@ http://api.arrowdemo.center/v1/items/range?i=precipitation&ts=2016-2-23%2000%3A5
 		}
 	]
 }
-```
 
- 
-<<<<<<< HEAD
- 
-=======
- 
->>>>>>> 708d91fa35c961244b0a758cb67ac51f8024dc1f
