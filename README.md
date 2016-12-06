@@ -18,7 +18,7 @@ The happiness of London project presents it data via Open RESTful API's. These A
 ## Authorisation
 An API key is required to access the API. This is required to be presented as an API key header keys are issued by david.fearne@arrow.com
 
-```http
+```https
 apiKey:		jd1384y13ruc93480ry3498ry329t8y2
 ```
 Request size limiting was implemented via the key rate limiting and is currently set at 1440 requests per day or 1 per minute per API key.
@@ -32,9 +32,9 @@ All API calls are GET requests
 
 #### Request
 
-```http
+```https
 curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2" 
-http://api.abct.net/v1/theface/now
+https://api.arrowdemo.center/v1/theface/now
 ```
 #### Response
 
@@ -46,8 +46,8 @@ This API call requests for a range of indexes to represent the happiness of Lond
 The range of time is deterimed by time start `ts` and time end `te`. The time and data stamps are formatted as YYYY-MM-DD HH-MM-SS and URL encoded
 
 Request
-```HTTP
-curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2" http://api.abct.net/v1/theface/range?ts=2015-10-23%2000%3A50%3A48&te=2015-10-23%2000%3A59%3A48
+```https
+curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2" https://api.arrowdemo.center/v1/theface/range?ts=2015-10-23%2000%3A50%3A48&te=2015-10-23%2000%3A59%3A48
 
 ```
 Response 
@@ -127,9 +127,9 @@ The item required is determined by the `i` parameter in the request string. Curr
 
 #### Request
 
-```HTTP
+```https
 curl --header "apiKey: jd1384y13ruc93480ry3498ry329t8y2"
-http://api.abct.net/v1/items/range?i=precipitation&ts=2016-2-23%2000%3A50%3A48&te=2016-2-23%2000%3A59%3A48
+https://api.arrowdemo.center/v1/items/range?i=precipitation&ts=2016-2-23%2000%3A50%3A48&te=2016-2-23%2000%3A59%3A48
 ```
 #### Response 
 
