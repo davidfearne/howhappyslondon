@@ -24,7 +24,7 @@ exports.handler = (event, context) => {
 
       case "IntentRequest":
         // Intent Request
-        console.log(`INTENT REQUEST`)
+        console.log(`INTENT REQUEST`) //logging the intent that has been actived
 
         switch(event.request.intent.name) {
           case "getHappinessOfLondonNow":
@@ -45,18 +45,18 @@ exports.handler = (event, context) => {
             })
             break;
             
-             case "getHappinessOfLondonForSinceDate":
-            console.log(event.request.intent.slots.SinceDate.value)
-            var endpoint = "https://api.abct.net/v1/theface/now"
+             case "getHappinessOfLondonLastMonth":
+            var endpoint = "https://api.arrowdemo.center/v1/theface/sum"
             var body = ""
             https.get(endpoint, (response) => {
               response.on('data', (chunk) => { body += chunk })
               response.on('end', () => {
                 var data = JSON.parse(body)
-                var happinessOverTime = data.items[0].statistics.viewCount
+                var sumIndex = data.index
+                var sumValue = data.value
                 context.succeed(
                   generateResponse(
-                    buildSpeechletResponse(`Current view count is ${happinessOverTime}`, true),
+                    buildSpeechletResponse(`last month London was mostly ${sumValue} with an average index of ${sumIndex} percent`, true),
                     {}
                   )
                 )

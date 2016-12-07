@@ -2,5 +2,7 @@ getHappinessOfLondonNow now
 getHappinessOfLondonNow this second
 getHappinessOfLondonNow today
 
-getHappinessOfLondonForSinceDate for the last {SinceDate}
-getHappinessOfLondonForSinceDate over the last {SinceDate}
+getHappinessOfLondonLastMonth for the last
+getHappinessOfLondonLastMonth over the last
+getHappinessOfLondonLastMonth this month
+getHappinessOfLondonLastMonth recently

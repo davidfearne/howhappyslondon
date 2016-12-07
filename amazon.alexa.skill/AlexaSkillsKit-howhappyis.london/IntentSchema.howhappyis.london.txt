@@ -4,15 +4,7 @@
       "intent": "getHappinessOfLondonNow"
     },
     {
-      "intent": "getHappinessOfLondonForSinceDate",
-      "slots": [
-        {
-          "name": "SinceDate",
-          "type": "AMAZON.DATE"
-          
-        }
-        
-      ]
+      "intent": "getHappinessOfLondonLastMonth"
     }
   ]
 }
