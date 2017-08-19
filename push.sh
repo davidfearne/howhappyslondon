@@ -2,7 +2,7 @@
 
 ##############################################################
 #
-# Committing to GitHub
+# Committing to GitHub.com
 # Target OS: Mac OSX
 # Author: David Fearne
 # GitHub: https://github.com/davidfearne/howhappyslondon
